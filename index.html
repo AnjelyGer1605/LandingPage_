@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amanda Store</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="Contacto.css" />
+    <link rel="stylesheet" href="Categorias.css" />
+    <link rel="stylesheet" href="Ofertas.css" />
+    <link rel="stylesheet" href="Registro.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ENCABEZADO Y BOTÓN HAMBURGUESA -->
+    <header class="header">
+      <div class="logo-nombre">
+        <img src="Images/logo.png" alt="Logo" class="logo-img" />
+        <span class="nombre-empresa">Amanda Store</span>
+      </div>
+
+      <div class="menu-toggle-container">
+        <button class="hamburguesa" id="btnHamburguesa">&#9776;</button>
+        <ul class="menu-lista" id="menu">
+          <li><a href="#novedades">Novedades</a></li>
+          <li><a href="#categorias">Categorías</a></li>
+          <li><a href="#ofertas">Ofertas</a></li>
+          <li><a href="#contacto">Contáctanos</a></li>
+        </ul>
+      </div>
+
+      <!-- CARRITO Y BOTÓN DE REGISTRO -->
+      <div class="acciones-header">
+        <div class="registro-boton">
+          <button onclick="mostrarRegistro()">Registrarse</button>
+        </div>
+        <div class="carrito">
+          <img src="Images/carrito.jpeg" alt="Carrito" class="icono-carrito" />
+          <span id="contador-carrito" class="contador-carrito">0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- MODAL REGISTRO -->
+    <div id="Registro" class="registro oculto">
+      <div class="contenido">
+        <span class="cerrar" onclick="cerrarRegistro()">×</span>
+        <h2>Crear Cuenta</h2>
+        <form id="formularioRegistro" class="formulario-registro">
+          <div class="form-grupo">
+            <input
+              type="text"
+              id="registroNombre"
+              placeholder="Nombre completo"
+            />
+            <span id="errorRegistroNombre" class="mensaje-error-campo"></span>
+          </div>
+          <div class="form-grupo">
+            <input
+              type="email"
+              id="registroEmail"
+              placeholder="Correo electrónico"
+            />
+            <span id="errorRegistroEmail" class="mensaje-error-campo"></span>
+          </div>
+          <div class="form-grupo">
+            <input
+              type="password"
+              id="registroPassword"
+              placeholder="Contraseña"
+            />
+            <span id="errorRegistroPassword" class="mensaje-error-campo"></span>
+          </div>
+          <div class="form-grupo">
+            <input
+              type="password"
+              id="registroConfirmar"
+              placeholder="Confirmar contraseña"
+            />
+            <span
+              id="errorRegistroConfirmar"
+              class="mensaje-error-campo"
+            ></span>
+          </div>
+          <button type="submit">Registrarse</button>
+        </form>
+        <p class="registro-login">
+          ¿Ya tienes una cuenta? <a href="#">Inicia sesión</a>
+        </p>
+      </div>
+    </div>
+    <div id="registroExito" class="mensaje-enviado-popup">
+      <div class="popup-contenido">
+        <p>Registro enviado correctamente.</p>
+        <button class="btn-popup" onclick="cerrarPopupRegistro()">
+          Aceptar
+        </button>
+      </div>
+    </div>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+      <section class="hero">
+        <h1>Viste con Estilo</h1>
+        <p>
+          Diseños modernos, colores vibrantes y un toque de rebeldía para que
+          marques tendencia.
+        </p>
+        <a href="#novedades" class="btn-principal">Explorar</a>
+      </section>
+
+      <section id="novedades" class="seccion">
+        <h2>Novedades</h2>
+        <div class="galeria">
+          <img src="Images/ropa1.jpeg" alt="Nueva colección 1" />
+          <img src="Images/ropa2.jpeg" alt="Nueva colección 2" />
+          <img src="Images/ropa3.jpeg" alt="Nueva colección 3" />
+          <img src="Images/ropa4.jpeg" alt="Nueva colección 4" />
+          <img src="Images/ropa5.jpeg" alt="Nueva colección 5" />
+          <img src="Images/ropa6.jpeg" alt="Nueva colección 6" />
+          <img src="Images/ropa7.jpeg" alt="Nueva colección 7" />
+        </div>
+      </section>
+
+      <!-- SECCION CATEGORIAS -->
+      <section id="categorias" class="seccion categorias">
+        <h2>Categorías</h2>
+        <div class="categorias-grid">
+          <a href="#polos" class="categoria">
+            <img src="Images/polos.jpeg" alt="Polos" />
+            <h3>Polos</h3>
+          </a>
+          <a href="#casacas" class="categoria">
+            <img src="Images/casacas.jpeg" alt="Casacas" />
+            <h3>Casacas</h3>
+          </a>
+          <a href="#pantalones" class="categoria">
+            <img src="Images/pantalones.jpeg" alt="Pantalones" />
+            <h3>Pantalones</h3>
+          </a>
+          <a href="#chompas" class="categoria">
+            <img src="Images/poleras.jpeg" alt="Chompas" />
+            <h3>Chompas</h3>
+          </a>
+        </div>
+      </section>
+
+      <!-- SECCION OFERTAS -->
+      <section id="ofertas" class="seccion ofertas">
+        <h2>Ofertas del Mes</h2>
+        <div class="ofertas-grid">
+          <div class="oferta">
+            <img src="Images/casacaOferta.jpeg" alt="Casaca en oferta" />
+            <h3>Casaca Invierno</h3>
+            <div class="precios">
+              <span class="precio-original">S/ 89.00</span>
+              <span class="precio-oferta">S/59.99</span>
+            </div>
+            <button>Agregar</button>
+          </div>
+
+          <div class="oferta">
+            <img src="Images/pantalonOferta.jpeg" alt="Pantalón en oferta" />
+            <h3>Pantalón Jogger Unisex</h3>
+            <div class="precios">
+              <span class="precio-original">S/ 68.00</span>
+              <span class="precio-oferta">S/ 49.99</span>
+            </div>
+            <button>Agregar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN CONTACTO -->
+<section id="contacto" class="seccion contacto">
+  <div class="contacto-contenedor">
+    <!-- Formulario -->
+    <div class="formulario-contacto-cuadro">
+      <h2 class="titulo">Contáctanos</h2>
+      <form id="formularioContacto" class="formulario-contacto">
+        <div class="form-grupo">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" />
+          <span id="errorNombre" class="mensaje-error-campo"></span>
+        </div>
+
+        <div class="form-grupo">
+          <label for="email">Correo:</label>
+          <input type="text" id="email" />
+          <span id="errorEmail" class="mensaje-error-campo"></span>
+        </div>
+
+        <div class="form-grupo">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" rows="3"></textarea>
+          <span id="errorMensaje" class="mensaje-error-campo"></span>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <!-- Video al lado -->
+    <div class="proposito-video">
+      <iframe
+        src="https://www.youtube.com/embed/izOqVnykSAo"
+        title="Propósito de Estudio"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
+  <div id="mensajeEnviado" class="mensaje-enviado-popup">
+    <div class="popup-contenido">
+      <p>Mensaje enviado correctamente.</p>
+      <button class="btn-popup" onclick="Aceptar()">Aceptar</button>
+    </div>
+  </div>
+</section>
+
+    <!-- PIE DE PÁGINA -->
+    <section id="footer">
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- Logo y nombre de sitio -->
+          <div class="footer-brand">
+            <img src="Images/logo.png" alt="Logo" class="footer-logo" />
+            <p>Amanda Store</p>
+            <small>© 2025 Todos los derechos reservados</small>
+          </div>
+
+          <!-- Enlaces legales -->
+          <div class="footer-links">
+            <h4>Legal</h4>
+            <a href="Documentos/PoliticaPrivacidad.pdf" target="_blank"
+              >Política de Privacidad</a
+            >
+            <a href="Documentos/TerminosCondiciones.pdf" target="_blank"
+              >Términos y Condiciones</a
+            >
+            <a href="Documentos/LeyProteccionDatos.pdf" target="_blank"
+              >Protección de Datos</a
+            >
+          </div>
+
+          <!-- Redes sociales con íconos personalizados -->
+          <div class="footer-social">
+            <h4>Síguenos</h4>
+            <a href="#" target="_blank">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/145/145802.png"
+                alt="Facebook"
+                class="social-icon"
+              />
+            </a>
+            <a href="#" target="_blank">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/145/145812.png"
+                alt="Instagram"
+                class="social-icon"
+              />
+            </a>
+            <a href="#" target="_blank">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
+                alt="LinkedIn"
+                class="social-icon"
+              />
+            </a>
+            <a href="#" target="_blank">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/145/145806.png"
+                alt="Twitter"
+                class="social-icon"
+              />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+  </body>
+</html>
